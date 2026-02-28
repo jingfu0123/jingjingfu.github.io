@@ -1,11 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jingjing Fu</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jingjing Fu | Personal Homepage</title>
+  <meta name="description" content="Jingjing Fu — Senior Researcher. Medical multimodal AI, 3D/4D vision-language agents, generative medical imaging, RAG for healthcare." />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --muted:#a9b4d0;
+      --text:#eef2ff;
+      --accent:#7cdbff;
+      --accent2:#a78bfa;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(124,219,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.16), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 60px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 0 22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .avatar{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(124,219,255,.9), rgba(167,139,250,.85));
+      box-shadow: var(--shadow);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .brand .sub{font-size:13px; color:var(--muted); margin-top:2px}
+    nav{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;
+    }
+    nav a{
+      color:rgba(238,242,255,.92);
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(17,26,51,.35);
+      backdrop-filter: blur(6px);
+    }
+    nav a:hover{border-color:rgba(124,219,255,.45)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap:18px;
+      align-items:stretch;
+      margin-bottom:18px;
+    }
+    .card{
+      background: rgba(17,26,51,.65);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .hero h2{margin:0 0 10px; font-size:28px; letter-spacing:.2px}
+    .hero p{margin:0; color:rgba(238,242,255,.88)}
+    .chips{margin-top:14px; display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      font-size:12px; color:rgba(238,242,255,.9);
+      border:1px solid rgba(255,255,255,.12);
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.18);
+    }
+    .side h3{margin:0 0 10px; font-size:14px; color:rgba(238,242,255,.95)}
+    .kv{display:grid; gap:10px}
+    .kv div{font-size:13px; color:rgba(238,242,255,.9)}
+    .kv span{display:block; color:var(--muted); font-size:12px; margin-bottom:2px}
+    .section{margin-top:16px}
+    .section h3{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(238,242,255,.82);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .item h4{margin:0 0 6px; font-size:15px}
+    .item p{margin:0; color:rgba(238,242,255,.85); font-size:13px}
+    .meta{margin-top:8px; font-size:12px; color:var(--muted)}
+    ul{margin:8px 0 0 18px; padding:0}
+    li{margin:6px 0; color:rgba(238,242,255,.86)}
+    .footer{
+      margin-top:22px;
+      color:rgba(238,242,255,.65);
+      font-size:12px;
+      text-align:center;
+    }
+    .btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(124,219,255,.18), rgba(167,139,250,.10));
+      color:rgba(238,242,255,.95);
+      font-size:13px;
+      text-decoration:none;
+    }
+    .btn:hover{border-color:rgba(124,219,255,.55); text-decoration:none}
+    .note{font-size:12px; color:var(--muted); margin-top:8px}
+    @media (max-width: 840px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      nav{justify-content:flex-start}
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Jingjing Fu</h1>
-    <p>Senior Researcher at Microsoft Research Asia</p>
-    <p>Research: Medical AI, Multimodal Models</p>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Jingjing Fu</h1>
+          <div class="sub">Senior Researcher · Multimodal Medical AI · 3D/4D Agents</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="card">
+        <h2>Building reliable multimodal AI for healthcare</h2>
+        <p>
+          I work on medical vision-language modeling, 3D CT understanding, retrieval-augmented generation (RAG),
+          and generative modeling for medical imaging. My recent focus includes agentic systems that combine
+          perception, retrieval, and reasoning for robust clinical decision support.
+        </p>
+
+        <div class="chips" aria-label="Research areas">
+          <span class="chip">Medical VQA & Benchmarks</span>
+          <span class="chip">3D CT Agents</span>
+          <span class="chip">RAG + Bing Grounding</span>
+          <span class="chip">Generative CT (VAE / Diffusion)</span>
+          <span class="chip">Robustness & Stress Tests</span>
+          <span class="chip">MoE Transformers</span>
+        </div>
+
+        <div class="btns">
+          <!-- Replace # with your actual links -->
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">CV (PDF)</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">DBLP</a>
+        </div>
+        <div class="note">
+          Tip: replace the placeholder links above with your real URLs.
+        </div>
+      </div>
+
+      <aside class="card side" aria-label="Quick info">
+        <h3>Quick Info</h3>
+        <div class="kv">
+          <div><span>Affiliation</span>Microsoft Research Asia (MSRA)</div>
+          <div><span>Location</span>Beijing, China</div>
+          <div><span>Interests</span>Medical MLLMs, agents, RAG, generative imaging</div>
+          <div><span>Open to</span>Research collaboration, datasets & evaluations</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section">
+      <h3>About</h3>
+      <div class="card">
+        <p style="margin:0">
+          I’m a researcher focused on trustworthy multimodal AI for healthcare, spanning radiology and pathology.
+          I build systems that connect perception (images/3D volumes), retrieval (domain knowledge), and reasoning
+          (frontier LLMs/MLLMs) to improve reliability under distribution shifts and real-world noise.
+        </p>
+        <ul>
+          <li>Medical VQA datasets & evaluation: PMC-VQA, Path-VQA, VQA-RAD, SLAKE, MMMU variants, OmniMedVQA, etc.</li>
+          <li>Agentic 3D CT understanding: progressive evidence gathering, shared memory, lesion/ROI targeting.</li>
+          <li>Generative medical imaging: CT reconstruction/augmentation, mask-conditioned synthesis, inpainting.</li>
+          <li>RAG pipelines: Azure AI Studio, Bing grounding, and evaluation-driven improvements.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <h3>Research Themes</h3>
+      <div class="grid">
+        <div class="card item">
+          <h4>1) Reliable Medical MLLMs & Stress Tests</h4>
+          <p>
+            Diagnose shortcut behaviors, prompt sensitivity, refusal patterns, and image dependence across
+            medical benchmarks; design robustness-oriented evaluation protocols.
+          </p>
+          <div class="meta">Keywords: robustness, abstention, distractor attacks, distribution shift</div>
+        </div>
+
+        <div class="card item">
+          <h4>2) 3D/4D Medical Agents</h4>
+          <p>
+            Agent frameworks that iteratively select evidence (slices/organs/ROIs), reuse memory, and integrate
+            improved perception modules and frontier MLLMs.
+          </p>
+          <div class="meta">Keywords: ROI selection, shared memory, multi-step reasoning, extensibility</div>
+        </div>
+
+        <div class="card item">
+          <h4>3) Generative CT & Reconstruction</h4>
+          <p>
+            Use latent generative models (VAE/diffusion) with anatomical priors to synthesize and augment CT,
+            improving downstream robustness (e.g., segmentation and classification).
+          </p>
+          <div class="meta">Keywords: boundary preservation, organ masks, latent diffusion</div>
+        </div>
+
+        <div class="card item">
+          <h4>4) RAG for Healthcare</h4>
+          <p>
+            Build retrieval + rationale pipelines to ground answers in evidence, improve transparency, and reduce
+            hallucinations—integrating enterprise search when needed.
+          </p>
+          <div class="meta">Keywords: PIKE-RAG, evidence citation, Azure AI Studio, Bing grounding</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h3>Selected Projects</h3>
+      <div class="grid">
+        <div class="card item">
+          <h4>PIKE-RAG</h4>
+          <p>
+            Specialized knowledge and rationale-augmented generation for domain tasks, focusing on evidence-centric
+            answering and improved trustworthiness.
+          </p>
+          <div class="meta">Links: <a href="#" target="_blank" rel="noreferrer">Code</a> · <a href="#" target="_blank" rel="noreferrer">Paper</a></div>
+        </div>
+
+        <div class="card item">
+          <h4>3DMedAgent</h4>
+          <p>
+            Unified perception-to-understanding framework for 3D medical image analysis with progressive evidence
+            gathering and shared memory.
+          </p>
+          <div class="meta">Links: <a href="#" target="_blank" rel="noreferrer">Project page</a> · <a href="#" target="_blank" rel="noreferrer">Paper</a></div>
+        </div>
+
+        <div class="card item">
+          <h4>MedFeat</h4>
+          <p>
+            Explainability-guided, feedback-driven, model-aware feature augmentation for clinical tabular prediction,
+            reframing LLM-driven feature engineering.
+          </p>
+          <div class="meta">Links: <a href="#" target="_blank" rel="noreferrer">Paper</a> · <a href="#" target="_blank" rel="noreferrer">Slides</a></div>
+        </div>
+
+        <div class="card item">
+          <h4>Illusion of Readiness (Health AI)</h4>
+          <p>
+            Benchmark-driven analysis of health AI readiness, highlighting hidden fragilities and pitfalls in
+            “above human-expert performance” claims.
+          </p>
+          <div class="meta">Links: <a href="#" target="_blank" rel="noreferrer">Manuscript</a> · <a href="#" target="_blank" rel="noreferrer">Resources</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <h3>Publications</h3>
+      <div class="card">
+        <p style="margin:0 0 10px; color:rgba(238,242,255,.85)">
+          Add your publications here (or auto-generate from BibTeX / DBLP / Scholar).
+        </p>
+
+        <!-- Replace with your real list -->
+        <ul>
+          <li><strong>Chain of Functions</strong> — Fine-grained chart reasoning data generation. <em>IJCNLP-AACL 2025</em>.</li>
+          <li><strong>PIKE-RAG</strong> — Specialized knowledge & rationale augmented generation. <em>2025</em>.</li>
+          <li><strong>OMGM</strong> — (Add your ACL 2025 entry here.)</li>
+          <li><strong>3DMedAgent</strong> — (Add your ICML-style / preprint entry here.)</li>
+        </ul>
+
+        <div class="note">
+          Tip: If you want, I can convert your BibTeX into this HTML list automatically.
+        </div>
+      </div>
+    </section>
+
+    <section id="talks" class="section">
+      <h3>Talks & Teaching</h3>
+      <div class="card">
+        <ul>
+          <li>Invited talks on medical multimodal evaluation & robustness (add events, dates).</li>
+          <li>Internal seminars on Azure RAG + Bing Grounding pipelines (add links to slides).</li>
+          <li>Workshops/tutorials on 3D medical agents and generative CT (add materials).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <div class="card">
+        <p style="margin:0 0 10px; color:rgba(238,242,255,.85)">
+          The easiest way to reach me is via email. You can also find me on GitHub and Google Scholar.
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+          <li>GitHub: <a href="#" target="_blank" rel="noreferrer">github.com/yourhandle</a></li>
+          <li>Scholar: <a href="#" target="_blank" rel="noreferrer">Google Scholar profile</a></li>
+          <li>DBLP: <a href="#" target="_blank" rel="noreferrer">DBLP author page</a></li>
+        </ul>
+        <div class="note">
+          Replace placeholders with your real links. If you use <code>username.github.io</code>, put this file as <code>index.html</code> in the repo root.
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Jingjing Fu · Built with plain HTML/CSS on GitHub Pages
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
